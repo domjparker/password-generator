@@ -23,15 +23,22 @@ var passwordLengthInput = prompt("How many characters do you want in your passwo
 // convert user input passwordLength from a string to an integer
 passwordLengthInput = parseInt(passwordLengthInput);
 // console.log(passwordLength);
-// if passwordLengthinput is a number between 8-128, store passwordLengthInput as variable passwordLength
-while (passwordLengthInput < 8 || passwordLengthInput > 128) {
-  passwordLengthInput = prompt("Please enter a valid number between 8 - 128");
-  if (passwordLengthInput >= 8 && passwordLengthInput <= 128) {
+// if passwordLengthinput is a number between 8-128, store passwordLengthInput as variable passwordLength. If not a valid numerical input, user prompted for a valide number again.
+if (passwordLengthInput >= 8 && passwordLengthInput <= 128) {
     var specCharInput = confirm("Would you like special characters in your generated password?");
-  }
+  } else {while (passwordLengthInput < 8 || passwordLengthInput > 128) {
+    passwordLengthInput = prompt("Please enter a valid number between 8 - 128");
+    if (passwordLengthInput >= 8 && passwordLengthInput <= 128) {
+      var specCharInput = confirm("Would you like special characters in your generated password?");
+    }
 }
-  
-  
+}
+console.log(specCharInput)
+// if (specCharInput == true) {
+//   console.log("true");
+  // possibleCharacters = specChar.concat(possibleCharacters);  
+// }
+  // console.log(possibleCharacters);
 // }
 
   // confirm whether user wants special characters
