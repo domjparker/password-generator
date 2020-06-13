@@ -23,7 +23,7 @@ var passwordLengthInput = prompt("How many characters do you want in your passwo
 // convert user input passwordLength from a string to an integer
 passwordLengthInput = parseInt(passwordLengthInput);
 // console.log(passwordLength);
-// if passwordLengthinput is a number between 8-128, store passwordLengthInput as variable passwordLength. If not a valid numerical input, user prompted for a valide number again.
+// if passwordLengthinput is a number between 8-128, store passwordLengthInput as variable passwordLength. If not a valid numerical input, prompt user for valid number until true.
 if (passwordLengthInput >= 8 && passwordLengthInput <= 128) {
     var specCharInput = confirm("Would you like special characters in your generated password?");
   } else {while (passwordLengthInput < 8 || passwordLengthInput > 128) {
@@ -33,28 +33,32 @@ if (passwordLengthInput >= 8 && passwordLengthInput <= 128) {
     }
 }
 }
-console.log(specCharInput)
-// if (specCharInput == true) {
-//   console.log("true");
-  // possibleCharacters = specChar.concat(possibleCharacters);  
-// }
-  // console.log(possibleCharacters);
-// }
+// console.log(specCharInput)
+// confirm whether user wants special characters in password
+if (specCharInput == true) {
+    possibleCharacters = possibleCharacters.concat(specChar);
+}
+// console.log(possibleCharacters);
+// confirm whether user wants numbers in password
+var numInput = confirm("Would you like numbers included your generated password?");
+if (numInput == true) {
+    possibleCharacters = possibleCharacters.concat(numbers);
+}
+// console.log(possibleCharacters);
+// confirm whether user wants lower case letters in password
+var lowerCaseInput = confirm("Would you like lower case letters included in your generated password?");
+if (lowerCaseInput == true) {
+    possibleCharacters = possibleCharacters.concat(lowerCase);
+}
+// console.log(possibleCharacters);
+// confirm whether user wants upper case letters in password
+var upperCaseInput = confirm("Would you like upper case letters included in your generated password?");
+if (upperCaseInput == true) {
+    possibleCharacters = possibleCharacters.concat(upperCase);
+}
+console.log(possibleCharacters);
 
-  // confirm whether user wants special characters
-    // store in includeSpecial (booleans)
-  // confirm if the user wants numbers
-    // store in includeNumbers
-  // confirm whether user wnats lowercase
-    // store in includeLower
-  // confirm whether user wants uppercase
-    // store in includeUpper
-
-// if character Boolean is true, add that array to the possible
-
-// remember to use concatenation to combine arrays, or spread in.
-// 
-// then we have completed possibleCharacters array, build a pas
+// when possibleCharacters array completed, build a password
 
 var passwordStr=""
 
